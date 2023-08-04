@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="myForm">
+        <fieldset>
+            <legend>과목점수</legend>
+            이름 : <input type="text" id="name" name="name"><br>
+            국어 : <input type="text" id="kor" name="kor"><br>
+            영어 : <input type="text" id="eng" name="eng"><br>
+            수학 : <input type="text" id="math" name="math"><br>
+            <button type="button" onclick="clickEvent();">계산</button>
+        </fieldset>
+        <ol id="ol">
+
+        </ol>
+    </form>
+    <script>
+        function clickEvent(){
+            //input 창에 입력된 값은 value => string으로 입력됨.
+            let name = document.getElementById('name').value;
+            let kor = document.getElementById('kor').value;
+            let eng = document.getElementById('eng').value;
+            let math = document.getElementById('math').value;
+
+            //if문을 이용하여 점수가 0미만, 100이상이면 alert창을 띄워 잘못된 값이라고 안내
+            if(0 > (kor | eng | math) || 100 <  (kor | eng | math)  ){
+                alert('잘못된 값입니다.');
+                document.getElementById('kor').value = "";
+                document.getElementById('eng').value = "";
+                document.getElementById('math').value = "";
+
+            } else{
+                //형변환 string => number
+                kor = parseInt(kor); //1000원 number('1000원') => NaN
+                eng = parseInt(eng);
+                math = parseInt(math);
+                let sum = kor + eng + math;
+                let avg = sum / 3.0;
+                let avg2 = Math.round(sum/3); //정수 단위로 반올림
+
+                //if문을 활용하여 평균이 60이상이면 합격여부를 pass, 아니면 fail로 표시
+                let grade ='';
+                if(avg2 >= 60) {
+                    grade = 'pass';
+                }else{
+                    grade = 'fail';
+                }
+
+                let ol = document.getElementById('ol');
+                ol.innerHTML = `<li>이름 : ${name} </li>`;
+                ol.innerHTML += `<li>합계 : ${sum} </li>`;
+                ol.innerHTML += `<li>평균 : ${avg2} </li>`;
+                ol.innerHTML += `<li>합격여부 : ${grade} </li>`;
+            }
+            
+        }
+    </script>
+</body>
+</html>

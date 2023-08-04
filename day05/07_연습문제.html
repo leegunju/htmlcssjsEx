@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(42, 193, 188);
+        }
+        div{
+            text-align: center;
+        }
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 300px;
+            margin: auto;
+            border-radius: 10px;
+            background-color: whitesmoke;
+            transform: translate(-50%, -50%);
+        }
+        input{
+            margin-top: 20px;
+            margin-bottom: 5px;
+            width: 450px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+        }
+        .btn-input{
+            width: 460px;
+            height: 50px;
+            margin-top: 10px;
+            background-color: #aaa;
+            border-radius: 10px 10px 10px 10px;
+            border: none;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .links{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+                <input type="text" class="text-field" placeholder="아이디">
+                <input type="password" class="text-field" placeholder="비밀번호">
+                <!-- <button type="submit" class="btn-input" disabled>로그인</button> -->
+                <input type="button" class="btn-input" value="로그인" disabled>
+        </form>
+        <div class="links">
+            <a href="#">비밀번호를 잊어버리셨나요</a>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.btn-input');
+        const inputs = document.querySelectorAll('.text-field');
+        console.log(inputs);
+
+        inputs[0].addEventListener('input',()=>{
+            let upw = document.getElementsByClassName('text-field')[1].value;
+            if(upw.length > 7){
+                let uid = document.getElementsByClassName('text-field')[0].value;
+                if(uid.length > 7){
+                    btn.style.setProperty('background-color','rgb(27, 188, 155)');
+                    btn.disabled = false;
+                }
+            } else{
+                btn.style.setProperty('background-color','#aaa');
+                btn.disabled = true;
+            }
+        })
+
+        inputs[1].addEventListener('input',()=>{
+            let uid = document.getElementsByClassName('text-field')[0].value;
+            if(uid.length > 7){
+                let upw = document.getElementsByClassName('text-field')[1].value;
+                let reg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(upw);
+                console.log(upw,reg);
+                if(reg){
+                    btn.style.setProperty('background-color','rgb(27, 188, 155)');
+                    btn.disabled = false;
+                }
+            } else{
+                btn.style.setProperty('background-color','#aaa');
+                btn.disabled = true;
+            }
+        })
+    </script>
+</body>
+</html>

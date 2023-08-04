@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event - 데이터 받기</title>
+</head>
+<body>
+    <h1>
+        form 태그를 통해 데이터 받아오기
+    </h1>
+    <ul>
+        <li>
+            input, textarea, select, html element의 속성, 텍스트 데이터를 받아오기
+        </li>
+        <li>
+            form 태그의 데이터는 value 속성으로 값이 매핑되어 있으므로 value 속성을 호출하면 된다.
+        </li>
+        <li>
+            select option, radio, checkbox value는 선택된값을 가져와야 하기 때문에
+            속성에 value 값을 추가하는 작업이 필요
+        </li>
+        <li>
+            value속성의 데이터는 모두 string 처리된다.
+        </li>
+    </ul>
+    <form action="" id="myForm">
+        <fieldset>
+            <legend>이벤트를 활용한 전송</legend>
+            ID : <input type="text" id="userid"><br>
+            PW : <input type="password" id="userpw"><br>
+            Birth : <input type="date" id="birth"><br>
+            Pin : <input type="number" id="pin"><br>
+            <button type="button" onclick="clickEventOccurend();">전송</button>
+            <button type="button" onclick="makeList();">리스트로 출력</button>
+        </fieldset>
+    </form>
+    <h3 id="info">
+
+    </h3>
+    <ol id="ol">
+
+    </ol>
+    <script>
+        function makeList(){
+            // 화면에서 입력한 값을 받아오는 과정
+            let userid = document.getElementById('userid').value;
+            let userpw = document.getElementById('userpw').value;
+            let brith = document.getElementById('birth').value;  //string -> Date
+            let pin = document.getElementById('pin').value;  //string -> number
+            // console.log(typeof pin);
+            pin = parseInt(pin);  //parseInt('정수로 변경될 수 있는 문자만 가능')
+            // console.log(typeof pin);
+            pin = Number(pin);  //Number('숫자로 변경될 수 있는 문자')
+            // console.log(typeof pin);
+            brith = new Date(brith);
+            console.log(typeof birth);
+
+            let ol = document.getElementById('ol');
+            // ol.innerHTML = `<li>${typeof userid} : ${userid}</li>`;
+            // ol.innerHTML += `<li>${typeof userpw} : ${userpw}</li>`;
+            // ol.innerHTML += `<li>${typeof brith} : ${brith}</li>`;
+            // ol.innerHTML += `<li>${typeof pin} : ${pin}</li>`;
+            let str = `<li>${typeof userid} : ${userid}</li><li>${typeof userpw} : ${userpw}</li><li>${typeof brith} : ${brith}</li><li>${typeof pin} : ${pin}</li>`;
+            ol.innerHTML = str;
+        }
+
+        function clickEventOccurend(){
+            // 화면에서 입력한 값을 받아오는 과정
+            let userid = document.getElementById('userid').value;
+            let userpw = document.getElementById('userpw').value;
+            let brith = document.getElementById('birth').value;
+            let pin = document.getElementById('pin').value;
+
+            //h3 태그에 출력하는 과정
+            let info = document.getElementById('info');
+            info.innerText = `userid : ${typeof userid} => ${userid}`;
+            info.innerText += `password : ${typeof userpw} => ${userpw}`;
+            info.innerText += `birthday : ${typeof birth} => ${birth}`;
+            info.innerText += `pin : ${typeof pin} => ${pin}`;
+        }
+    </script>
+</body>
+</html>

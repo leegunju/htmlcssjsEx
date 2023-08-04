@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(128,128,128,0.321)) ,url(/image/배경화면.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+.navbar{
+    height: 60px;
+    padding: 0px 0px;
+}
+.navbar>a{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    background-color: black;
+    float: left;
+    height: 100vh;
+    width: 200px;
+    line-height: 60px;
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+
+}
+.navbar>ul{
+    position: absolute;
+    margin-top: 200px;
+}
+.navbar>ul>li{
+    display: block;
+    margin-left: 30px;
+    line-height: 30px;
+
+}
+.navbar>ul>li>a{
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+.header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    text-align: center;
+    color: white
+}
+.sub{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid green;
+    border-radius: 20px 20px 20px 20px;
+}
+i{
+    font-size: 30px;
+    margin-left: 20px;
+}
+.fa-facebook{
+    color: blue;
+}
+.fa-instagram{
+    color: deeppink;
+}
+.fa-twitter{
+    color: aqua;
+}

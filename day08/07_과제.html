@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+</head>
+<body>
+    <form action="">
+        이름: <input type="text" id="uname" name="uname"><br>
+        거주지: <input type="text" id="addr" name="addr"><br>
+        좋아하는 리스트<br>
+        리스트 1: <input type="text" id="favor1" name="favor1"><br>
+        리스트 2: <input type="text" id="favor2" name="favor2"><br>
+        리스트 3: <input type="text" id="favor3" name="favor3"><br>
+        이메일: <input type="email" id="email" name="email"><br>
+        Pet 소유여부: <input type="text" id="pet" name="pet"><br>
+        지금가장원하는 것: <input type="text" id="wanna" name="wanna"><br>
+        <button type="button" onclick="getDatas();">객체로 전송</button>
+    </form>
+
+    <h1>전송받은 데이터 출력<button type="button" onclick="print();">출력</button></h1>
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <td id="unameA"></td>
+        </tr>
+        <tr>
+            <th>거주지</th>
+            <td id="addrA"></td>
+        </tr>
+        <tr>
+            <th>좋아하는 리스트</th>
+            <td>
+                <ul>
+                    <li id="favor1A"></li>
+                    <li id="favor2A"></li>
+                    <li id="favor3A"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td id="emailA"></td>
+        </tr>
+        <tr>
+            <th>Pet 소유여부</th>
+            <td id="petA"></td>
+        </tr>      
+        <tr>
+            <th>지금가장원하는 것</th>
+            <td id="wannaA"></td>
+        </tr> 
+    </table>
+
+    <script>
+    // let sbmBtn = document.getElementById('sbmBtn');
+    // let printBtn = document.getElementById('printBtn');
+
+    const dataObj = {
+        uname : "",
+        addr : "",
+        favor : {
+            favor1 : "",
+            favor2 : "",
+            favor3 : "",
+        },
+        email: "",
+        pet: "",
+        wanna: "",
+    };
+
+    function getDatas(){
+        let uname = document.getElementById('uname').value;
+        let addr = document.getElementById('addr').value;
+        let favor1 = document.getElementById('favor1').value;
+        let favor2 = document.getElementById('favor2').value;
+        let favor3 = document.getElementById('favor3').value;
+        let email = document.getElementById('email').value;
+        let pet = document.getElementById('pet').value;
+        let wanna = document.getElementById('wanna').value;
+
+        dataObj.uname = uname;
+        dataObj.addr = addr;
+        dataObj.favor.favor1 = favor1;
+        dataObj.favor.favor2 = favor2;
+        dataObj.favor.favor3 = favor3;
+        dataObj.email = email;
+        dataObj.pet = pet;
+        dataObj.wanna = wanna;
+        
+        console.log(dataObj);
+
+    }
+
+    function print(){
+        document.getElementById('unameA').innerHTML =dataObj.uname;
+        document.getElementById('addrA').innerHTML =dataObj.addr;
+        document.getElementById('favor1A').innerHTML =dataObj.favor.favor1;
+        document.getElementById('favor2A').innerHTML =dataObj.favor.favor2;
+        document.getElementById('favor3A').innerHTML =dataObj.favor.favor3;
+        document.getElementById('emailA').innerHTML =dataObj.email;
+        document.getElementById('petA').innerHTML =dataObj.pet;
+        document.getElementById('wannaA').innerHTML =dataObj.wanna;
+    }
+
+    </script>
+</body>
+</html>

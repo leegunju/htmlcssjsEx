@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 속성</title>
+    <!-- 
+        float : 요소를 띄우는 속성
+        - 원래 웹페이지에서 이미지를 텍스트와 함께 배치할 목적으로 만든 속성
+        - 한라인에 요소들을 각각 오른쪽과 왼쪽에 배치할 때 유용하게 쓰임
+        - float 속성 사용시 자식요소의 높이 값을 부모가 인식할수 없음 주의~!!
+        - ::after 란 가상선택자를 이용하여 css 상에서 가상요소로 부모가 높이를 인식할 수 있게 함.
+        .클래스::after{
+            content: "";
+            clear : both;
+            display : block;
+        }
+     -->
+     <style>
+        /* .p-box{
+            background-color: yellow;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: left;
+        } */
+        /* p-box::after를 구성하여 p-box 뒤에 빈 컨텐츠 하나를 추가 display :block로 변경하여 높이를 잡음. */
+        /* .p-box::after{
+            content: "";
+            clear: both;
+            display: block;
+        } */
+        .p-box{
+            border: 3px solid black;
+            width: 500px;
+            /* height: 500px; */
+        }
+        .p-box::after{
+            content: "";
+            clear:  both;
+            display: block;
+        }
+        /* 
+        calc(식)
+        - 단위가 다른 값들을 계산해야 할 때 사용
+        - 연산자 앞뒤로 띄어쓰기 해야함.
+        */
+        .box1{
+            /* % 의 기준은 부모의 기준 */
+            background-color: red;
+            width: calc(100% / 3);
+            height: 500px;
+            float: left;
+        }
+        .box2{
+            background-color: yellow;
+            width: calc(100% / 3);
+            height: 500px;
+            float: left;
+        }
+        .box3{
+            background-color: blue;
+            width: calc(100% / 3);
+            height: 500px;
+            float: left;
+        }
+     </style>
+</head>
+<body>
+    <!-- <div class="p-box">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div> -->
+    <div class="p-box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(128,128,128,0.321)) ,url(/image/배경화면.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+.navbar{
+    height: 60px;
+    padding: 10px 30px;
+}
+.navbar>a{
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
+.navbar>ul{
+    float: right;
+}
+.navbar>ul>li{
+    display: inline;
+    margin-left: 30px;
+    line-height: 30px;
+}
+.navbar>ul>li>a{
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+.header{
+    position: absolute;
+    top: 300px;
+    left: 760px;
+    font-size: 40px;
+    text-align: center;
+    color: white
+}
+.sub{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid green;
+    border-radius: 20px 20px 20px 20px;
+}

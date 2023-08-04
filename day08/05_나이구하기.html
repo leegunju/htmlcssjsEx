@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이구하기</title>
+</head>
+<body>
+    이름: <input type="text" id="name"><br>
+    주민번호: <input type="text" id="rNum"><br>
+    <button type="button" onclick="a();">확인</button>
+    <h3 id="result">
+        <!-- 이름, 생년월일, 성별, 나이 -->
+    </h3>
+    <script>
+        function a(){
+            let name = document.getElementById('name').value;
+            let rNum = document.getElementById('rNum').value;
+            let birth = rNum.slice(0, rNum.indexOf("-"));
+            let gender = rNum.slice(7,8);
+            let gender1
+            if(gender == 1 || gender == 3) {
+                gender1 = "남자";
+            }else{
+                gender1 = "여자";
+            }
+            //let mw = (getNum=="1"||getNum=="3")? '남' : '여';
+            let now = new Date();
+            let age = now.getFullYear() - 2000 - parseInt(rNum.substring(0,2))+1;
+            if(age < 0){
+                age = age + 100;
+            }else{
+                age = age;
+            }
+
+            let result = document.getElementById('result');
+            result.innerText = `이름:${name} 생년월일:${birth} 성별:${gender1} 나이:${age}`;
+        }
+        let now = new Date();
+        console.log(now.getFullYear());
+        // let a = now.getFullYear() - 2000;
+        // console.log(a);
+    </script>
+</body>
+</html>

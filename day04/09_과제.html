@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <script src="https://kit.fontawesome.com/ea4b9c6562.js" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            width: 75%;
+            height: 768px;
+            margin: auto;
+            background-image: url("/image/비행기.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100%;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .cover{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .inner{
+            width: 60%;
+            background-color: white;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .bt{
+            background-color: gray;
+            border: 1px solid black;
+            height: 80px;
+        }
+        .inner > h2{
+            margin-top: 5px;
+        }
+        .inner > img {
+            width: 50px;
+            height: 50px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cover">
+            <div class="inner">
+                <img src="/image/고양이1.jpg" alt="">
+                <h2>
+                    사용자 수가 많아 접속이 지연되고 있습니다. <br />
+                    잠시 기다려주세요.
+                </h2>
+                <i class="fa fa-spinner"></i>
+                <p>접속이 어려운 경우 메인으로 자동 이동합니다.</p>
+                <div class="bt">
+                    <p>
+                        관련 문의 사항은 고객센터에 문의해주시면 친절히 안내해드리겠습니다.
+                        <br />
+                        고객상담전화:080-022-0182
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

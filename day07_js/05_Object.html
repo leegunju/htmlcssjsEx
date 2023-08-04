@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <h1>
+        객체 : 식별할 수 있는 것을 상세 특징으로 표현하려한 형식(코드 타입)
+    </h1>
+    <ul>
+        <li>
+            const 상수로 선언하는 것이 일반적 : 객체의 지속성을 유지하고 확보하기 위함.
+        </li>
+        <li>
+            { } 안에 속성명: 속성값, 속성명: 속성값, ...으로 표현
+        </li>
+        <li>
+            속성명은 같은 객체 내에서는 중복되면 안됨. (고유 키)
+        </li>
+        <li>
+            객체 내부의 속성값으로 사용할 수 있는 데이터 타입은 제한이 없다.
+        </li>
+        <li>
+            객체의 속성값으로 익명함수를 정의하면 그 함수를 메서드라고 부른다. 메서드명은 속성명이
+        </li>
+    </ul>
+    <script>
+        const car = {name: 'myCar', year: 2023};
+        // car= 100; 재할당 불가능
+        // car 객체의 지속성을 확보하기 위해
+
+        let myCar = {name: 'superCar', year:2023 }; //일반적이지 않음.
+        myCar = 100; //가능
+        //myCar의 객체는 사라짐 - 객체를 활용하려고 하는 목적이 사라짐
+    </script>
+    <script>
+        const me = {
+            lastName: 'Lee',
+            firstName:'geonju',
+            age: 28,
+            addr: 'incheon',
+            isDeveloper: true,
+            "hobby":'game',
+            "myFavor":'아이스크림',
+            avail: {
+                year: 2023,
+                title: 'javascript',
+                ver: 'ES6+',
+                project: 'Back-end',
+                intro: function(){
+                    console.log(`${me.avail.title} : ${me.avail.ver} = ${me.avail.project}`);
+                    return `re:${this.title} : ${this.ver} = ${this.project}`;
+                }
+            },
+            year: 2023,
+        };
+        console.log(me);
+        console.log(me.addr);   //incheon
+        console.log(me.year);   //2023
+
+        console.log(me.avail.project);
+        console.log(me.avail.title);
+        console.log(me.avail.intro); //함수 실행이 아닌 지목
+        console.log(me.avail.intro()); //함수 실행(invoke : 호출실행)
+
+        console.log('----------------');
+        console.log(me["addr"]);
+        console.log(me['hobby']);
+        console.log(me["avail"]["title"]);
+        console.log(me["avail"]["intro"]());
+
+        console.log('-------------');
+        let keyName = 'firstName';
+        console.log(me[keyName]);  // me["firstName"]
+
+        keyName="age";
+        console.log(me[keyName]);  // me["age"]
+
+        console.log('---------------');
+        console.log(me.avail["title"]);
+        console.log(me["avail"].ver);
+    </script>
+    <script>
+        // 객체 생성 : 좋아하는 가수의 플레이리스트 3곡
+        // 이름, 나이, 플레이리스트(객체로 3곡), 함수(플레이리스트의 곡 3개를 출력 콘솔로 출력)
+        // 객체 출력
+        const mctheMax = {
+            name: 'isu',
+            age: 40,
+            playList: {
+                title1: '어디에도',
+                title2: '잠시만 안녕',
+                title3: '사랑하고 싶었어',
+            },
+            intro: function(title1, title2, title3){
+                    console.log(`${mctheMax.playList.title1} : ${mctheMax.playList.title2} : ${mctheMax.playList.title3}`);
+                    return `playList:${title1} : ${title2} : ${title3}`;
+            },
+
+        };
+        console.log(mctheMax.name);
+        console.log(mctheMax.age);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            border: 1px solid gray;
+        }
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin: 100px auto;
+        }
+        .pic{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr id="board"></tr>
+    </table>
+    <script>
+        let images = [
+            "개.jpg", "개.jpg",
+            "닭.jpg", "닭.jpg",
+            "돼지.jpg", "돼지.jpg",
+            "양.jpg", "양.jpg",
+            "원숭이.jpg", "원숭이.jpg",
+            "호랑이.jpg", "호랑이.jpg",
+        ];
+
+        window.addEventListener("load", function(){
+            //모델 섞기
+            for(let a=0; a<10000; a++){
+                let ran = Math.floor(Math.random()*12);  //카드 갯수만큼 곱한다.
+                let tmp = images[0];
+                images[0] = images[ran];
+                images[ran] = tmp;
+            }
+            //모델을 화면에 뿌린다
+            let board = document.getElementById('board');
+            for(let b=0; b<images.length; b++){
+                board.innerHTML += "<td><input class='pic' type='image' src='/image/"
+                 + images[b]+ "' value='" + images[b] + "'></td>";
+            }
+            let pic = document.querySelectorAll(".pic");
+            //이미지의 투명도가 1초후에 0이 된다.
+            setTimeout(function(){
+                for(let c=0; c<pic.length; c++){
+                    pic[c].style = "opacity:0";
+                }
+            }, 1000);
+
+            let count = 0;
+            let success = 0;    // success == images.length/2
+            //이미지 클릭에 반응하도록
+            let onePic = null;
+            let twoPic = null;
+            for(let d=0; d<pic.length; d++){
+
+                pic[d].addEventListener("click", function(){ //하나의 객체에 여러개 이벤트 쓸때
+                    console.log(this.value);
+                    this.style = "opacity:1";
+                    //첫번째 이미지인지, 두번재 이미지인지 확인
+                    count++;
+                    console.log(count);
+                    if(count==1){
+                        //첫번째 데이터 저장
+                        onePic = this;
+                        console.log(onePic);
+                    }else if(count==2){
+                        twoPic = this;
+                        //게임진행
+                        console.log(onePic, twoPic);
+                        if(onePic.value == twoPic.value){
+                            // success값 1증가
+                            success++;
+                            if(success == images.length/2){
+                                alert("성공!");
+                            }
+                            // onePic, towPic의 클릭이벤트 종료
+                            event.stopPropagation(); //상위 엘리먼트의 이벤트 전판하는 것을 중단
+                            event.preventDefault(); //이벤트 종료
+                            // onePic.disabled = true;
+                            // twoPic.disabled = true;
+                        }else{
+                            //오답일 경우 0.3초 뒤에 사진 투명해짐
+                            setTimeout(function(){
+                                console.log(onePic, twoPic);
+                                onePic.style="opacity:0";
+                                twoPic.style="opacity:0";
+                            }, 300);
+
+                        }
+                        count = 0;
+                    }else{
+                        alert("버그");
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>

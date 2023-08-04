@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green{
+            color: green;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        input 파일에 파일명.확장자 입력하여 전송버튼을 누르면
+        이미지파일인지 검사하여
+        이미지파일이면 '정상파일입니다.'
+        이미지 파일이 아니면 '이미지 파일만 가능합니다'
+        라고 출력하기
+        이미지파일 : jpg, png, jpeg, gif
+        - 대문자로 된 확장자명도 판단 가능해야 함.
+     -->
+    파일명 : <input type="text" id="fileName">
+    <button type="button" id="subBtn">전송</button>
+    <h3 id="a"></h3>
+
+    <script>
+        // subBtn.addEventListener('click', function() {
+        //     let fileName = document.getElementById('fileName').value;
+        //     let ext = fileName.slice(fileName.lastIndexOf(".") + 1).toLowerCase();
+        //     console.log(ext);
+        //     result ='';
+
+        //     if (ext === 'jpg' || ext === 'png' || ext === 'jpeg' || ext === 'gif') {
+        //         result = '정상파일입니다.';
+        //     } else {
+        //         result = '이미지 파일만 가능합니다.';
+        //     }
+
+        //     document.getElementById('a').innerText = result;
+        // });
+
+        function imageFileValid(image){
+            let imageFileName = image.toLowerCase();  //소문자로 변환
+
+            return imageFileName.endsWith('png') ? true
+            : imageFileName.endsWith('jpg') ? true
+            : imageFileNmae.endsWith('jpeg') ? true
+            : imageFileName.endsWith('gif') ? true : false;
+
+        }
+
+        document.getElementById('subBtn').addEventListener('click', function(){
+            let fileName = document.getElementById('fileName').value;
+            let imgTrue = `<span class="green">정상 파일입니다.</span>`;
+            let imgFalse = `<span class="red">이미지 파일만 가능합니다.</span>`;
+            document.getElementById('a').innerHTML = imageFileValid(fileName) ? imgTrue : imgFalse;
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    <div class="container">
+        <div class="area top">
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" value="+">+</button>
+            <button type="button" value="C">C</button><br>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" value="-">-</button><br>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" value="*">*</button><br>
+            <button type="button" value=".">.</button>
+            <button type="button" value="0">0</button>
+            <button type="button" value="=">=</button>
+            <button type="button" value="/">/</button>
+        </div>
+        <h1 class="area bottom" id="printFomula"></h1>
+    </div>
+
+    <script>
+        let fomulaValue = "";
+
+        document.querySelector('.container').addEventListener('click', function(e){
+            let btnValue = e.target.value;
+            console.log(btnValue);
+            console.log(typeof btnValue);
+
+            if(!isNaN(btnValue)){
+                fomulaValue += btnValue;
+                document.getElementById('printFomula').innerHTML = fomulaValue;
+            }else{
+                if(btnValue != undefined){
+                    switch(btnValue){
+                        case "C":
+                            fomulaValue = "";
+                            document.getElementById('printFomula').innerHTML ="";
+                            break;
+                        case "+":
+                            operation("+");
+                            break;
+                        case "-":
+                            operation("-");
+                            break;
+                        case "*":
+                            operation("*");
+                            break;
+                        case "/":
+                            operation("/");
+                            break;
+                        case ".":
+                            operation(".");
+                            break;
+                        case "=":
+                            reuslt("=");
+                            break;
+                    }
+                }
+            }
+        });
+
+        function operation(o, n1, n2){
+            fomulaValue += o;
+            document.getElementById('printFomula').innerHTML = fomulaValue;
+        }
+        // function reuslt(){
+        //     let result = eval(fomulaValue);
+        //     result = Math.round(result * 100) / 100;
+        //     document.getElementById('printFomula').innerHTML += `=${result}`;
+        //     fomulaValue = '';
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 연습문제</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:visited{
+            color: chartreuse;
+        }
+        a:active{
+            color: cornflowerblue;
+        }
+        a:hover{
+            color: brown;
+        }
+        .naver{
+            color: green;
+        }
+        .google{
+            color: aqua;
+            font-style: italic;
+        }
+        .daum{
+            color: blue;
+            font-style: italic;
+        }
+        a{
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        ul>li{
+            font-size: 20px;
+            list-style: none;
+            display:  inline;
+            margin-right: 20px;
+        }
+        ul>li:nth-child(2n){
+            color: red;
+        }
+        ul>li:nth-child(3n){
+            color: green;
+        }
+        ul>li:first-child, li:last-child{
+            font-weight: 700;
+            background-color: aqua;
+        }
+        li::after{
+            content: " 번째";
+        }
+        li::before{
+            content: "li 태그 ";
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        div 3개를 만들어
+        naver   google      daum 사이트로 연결되게 하고
+        naver는 초록색, google, daum 의 글자색과 모양을 달리 스타일을 주기
+        a tag는 링크를 클릭했는지에 따라서 글꼴 색이 달라지는 태그
+        가상선택자(의사선택자)
+        a:active(클릭할때 색)   a:visited (링크를 눌러본 후 색)
+        a:link(방문전)
+     -->
+     <div>
+        <a class="naver" href="http://naver.com" target="_blank">naver</a>
+     </div>
+     <div>
+        <a class="google" href="http://google.com" target="_blank">google</a>
+     </div>
+     <div>
+        <a class="daum" href="http://daum.net" target="_blank">daum</a>
+     </div>
+     <div class="youtube"><a href="http://youtube.com" target="_blank">youtube</a></div>
+
+     <!-- 
+        전체 글자크기, 굵기 크게
+        짝수 : 빨간색
+        3, 6, 9 : 초록색
+        1, 10 : 굵게 설정
+      -->
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+      </ul>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창</title>
+</head>
+<body>
+    <h1>
+        Window 메서드 종류
+    </h1>
+    <ul>
+        <li>
+            window.open('url', 'window name', 'option(size, scroll..)');
+        </li>
+        <li>
+            alert():경고창 띄움, prompt():input 받을수 있는 창, confirm():확인/취소 창
+        </li>
+        <li>
+            setInterval(function, millseconds):
+            일정 간격으로 지속적 실행문을 실행시킬 때 사용
+        </li>
+        <li>
+            setTimeout(function, millseconds);
+            일정시간동안 실행시킬때 사용
+        </li>
+    </ul>
+    <button type="button" onclick="openWindow();">열기</button>
+    <button type="button" onclick="closeWindow();">닫기</button>
+    <button type="button" onclick="openAlert();">alert</button>
+    <button type="button" onclick="openPrompt();">prompt</button>
+    <button type="button" onclick="openComfirm();">confrim</button>
+    <h3 id="msg"></h3>
+    <script>
+        let myWindow;
+        function openWindow(){
+            myWindow = window.open("","mywindow", "width=400, height=500");
+        }
+        function closeWindow(){
+            if(myWindow){
+                myWindow.close();
+            }
+        }
+        function openAlert(){
+            alert(123);
+        }
+        function openPrompt(){
+            let p = prompt(123);
+            document.getElementById('msg').innerText = p;
+        }
+        function openComfirm(){
+            let c = confirm(123);
+            if(c == true){
+                document.getElementById('msg').innerText = '확인';
+            }else{
+                document.getElementById('msg').innerText = '취소';
+            }   
+        }
+            
+
+        
+    </script>
+</body>
+</html>

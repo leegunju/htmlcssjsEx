@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Travel</h1>
+    <ul>
+        <li><a href="#" id="비행기" class="links" onclick="clickCity(this)">Home</a></li>
+        <li><a href="#" id="서울" class="links" onclick="clickCity(this)">Seoul</a></li>
+        <li><a href="#" id="도쿄" class="links" onclick="clickCity(this)">Tokyo</a></li>
+        <li><a href="#" id="파리" class="links" onclick="clickCity(this)">Paris</a></li>
+    </ul>
+    <img src="/image/비행기.jpg" alt="Home" id="cityImg">
+
+    <script>
+        const clickCity = (elem) => {
+            let idVal = elem.id;
+            let clsVal = elem.classList[0];
+            console.log(idVal);
+            console.log(clsVal);
+            document.getElementById('cityImg').src =
+            `/image/${idVal}.jpg`;
+        }
+    </script>
+</body>
+</html>

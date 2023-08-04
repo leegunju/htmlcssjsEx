@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nested_while</title>
+</head>
+<body>
+    <h1>
+        이중 반복문 : outer while -> 기준, inner while -> 계속반복
+    </h1>
+    <ul>
+        <li>outter while 1~3까지 반복</li>
+        <li>
+            inner while 1~5까지 반복
+        </li>
+        <li>
+            outer while : 1, inner while : 1~5 반복
+            outer while : 2, inner while : 1~5 반복
+            outer while : 3, inner while : 1~5 반복
+        </li>
+    </ul>
+    <h1>
+        (구구단) 2~9단까지 구구단 출력하기
+    </h1>
+    <button type="button" onclick="gugudan();">구구단 출력</button>
+    <h3 id="gugu1">
+
+    </h3>
+    <button type="button" onclick="gugudan1();">구구단 표 출력</button>
+    <div id="gugu2">
+        <table border="1" id="gugu3">
+        </table>
+    </div>
+        <!--
+            2×1=2  3×1=3  4×1=4 .................... 9×1=9
+            2×2=4 ......
+            .
+            .
+            .
+            2×9=18 ................................. 9×9=81
+        -->
+        <!-- div 태그안에 table을 만들어서 넣기 -->
+
+        <script>
+            function gugudan(){
+                let result = '';
+                let dan = 9;
+                let i = 1;
+                while(i<=dan){
+                    let j = 2;
+                    while(j<=dan){
+                        result += `${j} × ${i} = ${i*j} `;
+                        j++;
+                    }
+                    i++;
+                    result += '<br>';
+                }
+                document.getElementById('gugu1').innerHTML = result;
+            }
+
+            function gugudan1(){
+                let result = '';
+                let dan = 9;
+                let i = 1;
+                while(i<=dan){
+                    let j = 2;
+                    while(j<=dan){
+                        result += `<td>${j} × ${i} = ${i*j}</td> `;
+                        j++;
+                    }
+                    i++;
+                    result += '<tr>';
+                }
+                document.getElementById('gugu3').innerHTML = result;
+            }
+        </script>
+</body>
+</html>

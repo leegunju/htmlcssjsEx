@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <button type="button" id="ranBtn" onclick="computerNum();">랜덤 숫자 생성 버튼</button>
+        <button type="button" onclick="window.location.reload();">다시시도</button>
+    </h1>
+    <h3 id="printMsg"></h3>
+    <h1>
+        <input type="number" id="myguess" max="99" min="0">
+        <button type="button" id="guessBtn" onclick="compareNum();">정답!!</button>
+    </h1>
+    <h3 id="result"></h3>
+
+    <script>
+        // let random;
+        // let cnt=0;
+        // ranBtn.addEventListener('click', function(){
+        //     random = Math.floor(Math.random() * 100);
+        //     document.getElementById('printMsg').innerHTML = `컴퓨터가 랜덤수를 생성하였습니다. <br>생성된 숫자 : ${random}`;
+        // });
+
+        // guessBtn.addEventListener('click', function(){
+        //     let num = document.getElementById('myguess').value;
+        //     if(num < random){
+        //         document.getElementById('result').innerText = 'Up';
+        //     } else if (num > random){
+        //         document.getElementById('result').innerText = 'Down';
+        //     }else{
+        //         document.getElementById('result').innerHTML = `정답입니다.<br>컴퓨터 숫자는 ${random}입니다.`;
+        //     }
+        //     cnt++;
+        //     document.getElementById('result').innerHTML += `시도횟수 : ${cnt}`;
+        // });
+
+        let comNum = 0;
+        let count = 0;     //횟수
+        function computerNum(){
+            comNum = Math.floor(Math.random()*50)+1;
+            document.getElementById('printMsg').innerText =
+            `컴퓨터가 랜덤수(1~50)를 생성했습니다.`;
+        }
+        function compareNum(){
+            let str = '';
+            console.log(comNum);
+            let myNum = Number(document.getElementById('myguess').value);
+            count++;
+            if(myNum > 0 && myNum < 50){
+                if(comNum == myNum){
+                    str = `시도횟수 ${count}, 정답입니다. 컴퓨터 숫자는 ${comNum}였습니다.`;
+                }else if(comNum > myNum){
+                    str = `시도횟수 ${count}, UP!!`;
+                }else{
+                    str = `시도횟수 ${count}, DOWN!!`;
+                }
+            }else{
+                str = `1~50사이의 숫자만 가능합니다.`;
+            }
+            document.getElementById('result').innerText = str;
+        }
+        function compareNum2(){
+            if(count < 5){
+
+            }else{
+                //횟수 초과 메시지 출력
+                str = `시도횟수 ${count}회가 초과되었습니다. 게임종료!!`;
+            }
+        }
+    </script>
+</body>
+</html> 

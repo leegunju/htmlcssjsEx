@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요일구하기</title>
+</head>
+
+<body>
+    <h1>
+        오늘은??
+    </h1>
+    <button type="button" onclick="a();">Today</button>
+    <h3 id="week">
+        <!-- 오늘날짜와 요일을 출력 -->
+        <!-- 2023-04-13(목) -->
+        <!-- js에서도 switch문 가능 -->
+    </h3>
+    <script>
+        // let now = new Date();
+        // console.log(now);
+        // console.log(now.getFullYear()); //오늘 날짜의 년도
+        // console.log(now.getMonth()); //0~11월 +1
+        // console.log(now.getDate()); //일을 반환 1~31
+        // console.log(now.getDay()); //요일 반환 0(일)~6(토)
+        // getHours() / getMinutes() / getSeconds()
+
+        // let today = now.toLocaleDateString(); //현재 날짜형태로 변환
+        // console.log(today);
+        // let time = now.toLocaleTimeString(); //현재 시간
+        // console.log(time);
+        // let datetime = now.toLocaleString(); //현재 날짜 / 시간
+        // console.log(datetime);
+        function a() {
+            let now = new Date();
+            let today = now.toLocaleDateString();
+            let today1 = now.getDay();
+            let today2
+            switch (today1) {
+                case 0:
+                    today2 = "일"
+                    break;
+                case 1:
+                    today2 = "월"
+                    break;
+                case 2:
+                    today2 = "화"
+                    break;
+                case 3:
+                    today2 = "수"
+                    break;
+                case 4:
+                    today2 = "목"
+                    break;
+                case 5:
+                    today2 = "금"
+                    break;
+                case 6:
+                    today2 = "토"
+                    break;
+                default:
+            }
+            let week = document.getElementById('week');
+            week.innerText = `오늘날짜:${today} 오늘요일:${today2}요일`;
+        }
+
+    </script>
+</body>
+
+</html>

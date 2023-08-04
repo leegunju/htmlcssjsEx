@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="02_style.css">
+</head>
+<body>
+    <div></div>
+    <div>
+        <div class="navbar">
+            <a href="">DESIGN</a>
+            <ul>
+                <li>
+                    <a href="#">HOME</a>
+                </li>
+                <li>
+                    <a href="#">LOGIN IN</a>
+                </li>
+                <li>
+                    <a href="#">SIGN UP</a>
+                </li>
+                <li>
+                    <a href="#">BOARD</a>
+                </li>
+            </ul>
+            <div class="header">Welcome to Front-End<br>World!</div>
+            <div class="sub">Learn More</div>
+        </div>
+    </div>
+
+    <script>
+
+        window.addEventListener("load", function(){
+            let body = document.getElementsByTagName('')[0];
+            console.log(body);
+            setTimeout(function(){
+                body.style = "opacity:0";
+            },1000);
+            
+        });
+    </script>
+</body>
+</html>

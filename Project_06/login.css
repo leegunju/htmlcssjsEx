@@ -1,0 +1,101 @@
+.head {
+    text-align: center;
+}
+
+.mainDiv {
+    width: 350px;
+    height: 500px;
+    border: 1px solid white;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.main_logo {
+    width: 150px;
+    height: auto;
+}
+
+#loginTitle {
+    text-align: center;
+}
+
+#loginMsg {
+    font-size: 15px;
+    font-weight: 900;
+    text-align: center;
+}
+
+#idLogin {
+    width: 340px;
+    height: 30px;
+}
+
+#pwLogin {
+    width: 340px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+#keepLogin {
+    font-size: 30px;
+    text-align: left;
+    width: 25px;
+    height: 25px;
+}
+
+
+#pwFind {
+    font-size: 14px;
+    float: right;
+}
+
+#loginBtn {
+    width: 350px;
+    height: 30px;
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.joinDiv {
+    border: 1px solid lightgray;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#memberMsg {
+    font-size: 12px;
+    font-weight: 900;
+}
+
+#joinMember {
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    text-align: left;
+    font-size: 13px;
+    padding-top: 50px;
+    padding-left: 700px;
+}
+

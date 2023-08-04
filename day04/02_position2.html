@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            height: 150px;
+            background-color: antiquewhite;
+            position: relative;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+        }
+        .inner:nth-child(1){
+            position: absolute;
+            background-color: aqua;
+            top: 25px;
+            left: 10px;
+        }
+        .inner:nth-child(2){
+            position: absolute;
+            background-color: blueviolet;
+            top: 25px;
+            right: 10px;
+        }
+        .inner:nth-child(3){
+            position: absolute;
+            background-color: brown;
+            top: 25px;
+            left: 50%;
+            /* transform: translate */
+            transform: translate(-50%);
+        }
+
+        .outer1{
+            position: relative;
+            border: 3px solid black;
+            width: 500px;
+            height: 500px;
+            background-color: lightsteelblue;
+        }
+        .inner1{
+            position: absolute;
+            border: 3px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: orangered;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .fixed{
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: aquamarine;
+            width: 30px;
+            text-align: center;
+            border-radius: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body id="top">
+    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+    </div>
+
+    <div class="outer1">
+        <div class="inner1"></div>
+    </div>
+
+    <div class="fixed">
+        <a href="#top">top</a>
+    </div>
+
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

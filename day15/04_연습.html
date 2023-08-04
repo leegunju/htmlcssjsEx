@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn1">Li Tag 한번에 추가하기</button>
+    <button type="button" id="btn2">Li Tag 순차적 추가하기</button>
+    <button type="button" id="btn3">Li Tag 한번에 추가하기</button>
+    <button type="button" id="btn4">Li Tag 순차적 추가하기</button>
+    <ul id="ul1">
+
+    </ul>
+    <hr>
+    <ol id="ol1">
+
+    </ol>
+    <hr>
+    <ul id="ul2">
+
+    </ul>
+    <hr>
+    <ol id="ol2">
+
+    </ol>
+
+    <script>
+        document.getElementById('btn1').addEventListener('click',()=>{
+            let str = `<li>HTML</li>`;
+                str += `<li>CSS</li>`;
+                str += `<li>javascript</li>`;
+                str += `<li>SQL</li>`;
+                document.getElementById('ul1').innerHTML = str;
+        });
+        
+        const datas = ["HTML", "CSS", "Javascript", "SQL"];
+        let idx = 0;
+        document.getElementById('btn2').addEventListener('click',()=>{
+            if(idx < datas.length){
+                let str = `<li>${datas[idx]}</li>`;
+                document.getElementById('ol1').innerHTML += str;
+                idx++;
+            }
+        });
+
+        document.getElementById('btn3').addEventListener('click',()=>{
+            let ul2 = document.getElementById('ul2');
+            datas.forEach((elem)=>{    //HTML, CSS, JS, SQL
+                let li = document.createElement('li');  // <li></li>
+                li.innerText = elem; // <li>HTML</li>
+                ul2.appendChild(li);
+            })
+        });
+
+        let index = 0;
+        const ol2 = document.getElementById('ol2');
+        document.getElementById('btn4').addEventListener('click',()=>{
+           if(index < datas.length){
+            let li = document.createElement('li');
+            li.innerText = datas[index];
+            ol2.appendChild(li);
+            index++;
+           }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lotto 생성</title>
+</head>
+<body>
+    <h1>
+        1~45까지의 중복되지 않는 숫자 6개를 랜덤으로 추출 => 출력
+        set 객체를 사용하여 생성
+    </h1>
+    <button type="button" id="button1">랜덤번호 6개 생성(출력)</button>
+    <h1 id="printNum"></h1>
+    <button type="button" id="button2">당첨번호 7개(마지막번호는 보너스번호) 출력</button>
+    <h1 id="printNum2"></h1>
+    <button type="button" id="button3">결과확인</button>
+    <h1 id="printResult"></h1>
+
+    <script>
+        const lotto = new Set();
+        const user = new Set();
+
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2');
+        const button3 = document.getElementById('button3');
+        const printNum = document.getElementById('printNum');
+        const printNum2 = document.getElementById('printNum2');
+        const printResult = document.getElementById('printResult');
+
+        function random(numSet, numArr, size){
+            while (numSet.size < size) {
+                let num = Math.floor(Math.random() * 45) + 1;
+                numSet.add(num);
+            }
+
+        }
+
+        button1.addEventListener('click', function(){ 
+            // rNumArr.splice(0,6);
+            // const rNumSet = new Set();
+            // printNum.innerText = makeRan(rNumSet,rNumArr, 6);
+            random(lotto, 6);
+            console.log(lotto);
+            let str = '';
+            for(const iter of lotto){
+                str += iter+' ';
+                console.log(str);
+            }
+            printNum.innerText = str;
+        });
+
+        button2.addEventListener('click', function(){ 
+            random(user, 7);
+            console.log(user);
+            let str = '';
+            for(const iter of user){
+                str += iter+' ';
+                console.log(str);
+            }
+            printNum2.innerText = str;
+        });
+
+        button3.addEventListener('click', function(){ 
+        });
+        </script>
+</body>
+</html>

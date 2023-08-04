@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <link rel="stylesheet" href="location.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <div class="Location_Popup_Layer">
+        <div class="Location_Selection_Popup_Wrap" style="pointer-events: initial;">
+            <div class="Location_Popup_Box">
+                <div class="Location_Popup_Header">
+                    <div></div>
+                    <div class="Location_Popup_Title">지역 선택</div>
+                    <button class="Location_Popup_Close">
+                        <img src="/Project_06/Project_image/close_btn.png" alt="">
+                    </button>
+                </div>
+                <div class="Location_Popup_Main">
+                    <div class="Location_District_Header">
+                        <div class="District_Header_Title">광역시도</div>
+                        <div class="District_Header_Title">시군구</div>
+                        <div class="District_Header_Title">읍면동</div>
+                    </div>
+                    <div class="District_List_Box">
+                        <ul class="District_List">
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="1">서울</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="2">강원</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="3">경기</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="4">경남</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="5">경북</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="6">광주</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="7">대구</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="8">대전</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="9">부산</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="10">세종</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="11">울산</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button now" onclick="press(this)" value="12">인천
+                                    <img src="/Project_06/Project_image/right_btn.png" alt="">
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="13">전남</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="14">전북</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="15">제주</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="16">충남</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button" onclick="press(this)" value="17">충북</button>
+                            </li>
+                            <!-- <li class="District_Item">
+                                <button class="District_Item_Button"></button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button"></button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button"></button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button"></button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button"></button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button"></button>
+                            </li> -->
+                        </ul>
+                        <ul class="District_List" id="state">
+                            <!-- <li class="District_Item">
+                                <button class="District_Item_Button false">전체</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        송도
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        영종도
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        강화도
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        구월동
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        부평
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        부평역
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        청라
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        을왕리
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        소래포구
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        차이나타운
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        월미도
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        주안
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">강화군</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">계양구</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button now">
+                                    남동구
+                                    <img src="/Project_06/Project_image/right_btn.png" alt="">
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">동구</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">미추홀구</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">부평구</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">서구</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">연수구</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">옹진군</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">중구</button>
+                            </li> -->
+                        </ul>
+                        <ul class="District_List" id="state1">
+                            <!-- <li class="District_Item">
+                                <button class="District_Item_Button false">전체</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        구월동
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        소래포구
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button now">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        예술회관역
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        인천터미널
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        인천시청
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">
+                                    <span class="Super_Keyword">
+                                        <img src="/Project_06/Project_image/bolt.png" alt="">
+                                        인천논현동
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">간석동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">고잔동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">구월동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">남촌동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">논현동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">도림동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">만수동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">서창동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">수산동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">십정동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">운연동</button>
+                            </li>
+                            <li class="District_Item">
+                                <button class="District_Item_Button false">장수동</button>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="Location_Popup_User_Confirm">
+                    <button class="Location_Popup_Cancel">
+                        <span>취소</span>
+                    </button>
+                    <button class="Location_Popup_Submit">
+                        <span>선택 완료</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="location.js"></script>
+</body>
+
+</html>

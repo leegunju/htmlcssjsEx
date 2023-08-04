@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a의 b제곱 구하기</title>
+</head>
+<body>
+    <h1>
+        a의 b제곱을 구하라~!!! : Math.pow(a, b);
+    </h1>
+    a : <input type="text" id="a"> <br>
+    b : <input type="text" id="b"> <br>
+    <button type="button" id="calcBtn" onclick="calc();">제곱계산</button>
+    <h3 id="result">
+        <!-- a의 b제곱은 얼마입니다. -->
+        <!-- a = 2, b = 3   => 2*2*2 -->
+    </h3>
+    <script>
+        function calc(a, b){
+            // let a = document.getElementById('a').value;
+            // let b = document.getElementById('b').value;
+            // a = parseInt(a);
+            // b = parseInt(b);
+            let c = 1;
+            let index = 1;
+            while(index <= b && !(b<1)){
+                c = c*a;
+                index++;
+            }
+            //console.log(c);
+
+            document.getElementById('result').innerText = `${a}의 ${b}제곱은 ${c}입니다.`;
+        }
+
+        document.getElementById('calcBtn').addEventListener('click', ()=>{
+            let a = document.getElementById('a').value;
+            let b = document.getElementById('b').value;
+            calc(parseInt(a), parseInt(b));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/ea4b9c6562.js" crossorigin="anonymous"></script>
+    <style>
+        /* button, input{
+            border-radius: 0;
+            border: 0;
+        }
+        .input_text{
+            width: 444px;
+            height: 50px;
+            padding: 13px 15px;
+            margin: 1px;
+            box-sizing: border-box;
+            background-color: #fff;
+            font-size: 18px;
+            line-height: 24px;
+            color: #000;
+            font-weight: 700;
+            outline: 0;
+        }
+        .green_window{
+            position: relative;
+            width: 582px;
+            height: 52px;
+            border: 2px solid #19ce60;
+            border-radius: 2px;
+        }
+        .btn_submit{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 70px;
+            background-color: #19ce60;
+            border-radius: 0 2px 2px 0;
+            cursor: pointer;
+        }
+        .fa-solid{
+            color: white;
+            font-size: 30px;
+        } */
+        .search-left{
+            width: 330px;
+            height: 50px;
+            border: 1px solid #19ce60;
+            float: left;
+            border-radius: 3px 0px 0px 3px;
+            position: relative;
+        }
+        .search-btn{
+            width: 52px;
+            height: 52px;
+            background-color: #19ce60;
+            border: none;
+            border-radius: 0px 3px 3px 0px;
+            cursor: pointer;
+        }
+        .search-left>input{
+            width: 240px;
+            height: 30px;
+            position: absolute;
+            top: 7px;
+            left: 10px;
+            border: none;
+            outline: none;
+            font-weight: 700;
+        }
+        .fa-magnifying-glass{
+            color: white;
+            font-size: 30px;
+        }
+        .fa-keyboard, .icon2{
+            position: absolute;
+            top: 25%;
+        }
+        .fa-keyboard{
+            top: 17px;
+            left: 260px;
+            color: rgb(219, 219, 219);
+        }
+        .icon2{
+            left: 300px;
+            color: #19ce60;
+        }
+    </style>
+</head>
+<body>
+    <!-- <form action="">
+        <div class="green_window">
+            <input type="text" id="query" name="query" class="input_text">
+            <button type="submit" id="search_btn" class="btn_submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </form> -->
+    <form action="">
+        <div class="search-box">
+            <div class="search-left">
+                <input type="text" name="search">
+                <!-- 키보드 아이콘 -->
+                <i class="fa-regular fa-keyboard"></i>
+                <!-- 삼각형 아이콘 -->
+                <span class="icon2">▼</span>
+            </div>
+            <button type="submit" class="search-btn">
+                <!-- 돋보기 아이콘 -->
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </form>
+</body>
+</html>
